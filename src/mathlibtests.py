@@ -252,3 +252,42 @@ class TestPower(unittest.TestCase):
         self.assertAlmostEqual(prw(-0.5, 4), 0.0625, 7)
         self.assertAlmostEqual(prw(-2.0, 8), 256.0, 7)
         self.assertAlmostEqual(prw(-4.5, 5), -1845.28125, 7)
+
+
+#Test class for Nth root of a number
+class TestNRoot(unittest.TestCase):
+
+    def test_root_errors(self):
+        self.assertRaises(ValueError, root, -2, 2)
+        self.assertRaises(ValueError, root, -3, 4)
+        self.assertRaises(ValueError, root, 9, 0)
+        self.assertRaises(ValueError, root, 0, -20)
+        self.assertRaises(ValueError, root, 0, 0)
+        self.assertRaises(ValueError, root, 12.3, 0)
+        self.assertRaises(ValueError, root, -12, 4)
+
+    def test_root_of_positive_int_num(self):
+        self.assertEqual(root(4, 2), 2)
+        self.assertAlmostEqual(root(81, 3), 4.326748711)
+        self.assertEqual(root(0, 2), 0)
+        self.assertEqual(root(1, 5), 1)
+        self.assertAlmostEqual(root(250, 5), 3.017088168)
+
+    def test_root_of_negative_int_num(self):
+        self.assertEqual(root(-3, 1), -3)
+        self.assertEqual(root(-27, 3), -3)
+        self.assertEqual(root(-8, 3), -2)
+        self.assertEqual(root(-7776, 5), -6)
+        self.assertAlmostEqual(root(4, -2), 0.5)
+
+    def test_root_of_positive_float_num(self):
+        self.assertAlmostEqual(root(4.4, 2.0), 2.097617696)
+        self.assertAlmostEqual(root(8, 2.2), 2.573329796)
+        self.assertAlmostEqual(root(145, 3.2),4.736172379)
+        self.assertAlmostEqual(root(169874, 8.9), 3.869498738)
+    
+    def test_root_of_negative_float_num(self):
+        self.assertAlmostEqual(root(-4.4, 3.0), -1.638642541)
+        self.assertAlmostEqual(root(16, -2.0), 0.25)
+        self.assertAlmostEqual(root(-145, 3.3), 4.518143295)
+        self.assertAlmostEqual(root(169874, -8.9), 0.2584314062)
