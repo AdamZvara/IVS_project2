@@ -195,3 +195,60 @@ class TestDiv(unittest.TestCase):
         self.assertAlmostEqual(div(-124.4, 4.0), -31.1)
         self.assertAlmostEqual(div(5297.6, -43), -123.2)
         self.assertAlmostEqual(div(-100.1, -100), 1.001)
+
+
+#Test class for factorial of positive integer number
+class TestFact(unittest.TestCase):
+
+    def test_factorial_error(self):
+        self.assertRaises(ValueError, fact, -1)
+        self.assertRaises(ValueError, fact, -10)
+        self.assertRaises(ValueError, fact, -5.2)
+        self.assertRaises(ValueError, fact, 8.2)
+        self.assertRaises(ValueError, fact, 19.9)
+
+    def test_factorial_int_num(self):
+        self.assertEqual(fact(0), 1)
+        self.assertEqual(fact(1), 1)
+        self.assertEqual(fact(5), 120)
+        self.assertEqual(fact(10), 3628800)
+        self.assertEqual(fact(13), 6227020800)
+
+
+#Test class for natural exponentiation of x to the power of n
+class TestPower(unittest.TestCase):
+
+    def test_power_errors(self):
+        self.assertRaises(ValueError, prw, 2, 0)
+        self.assertRaises(ValueError, prw, 2.1, 2.2)
+        self.assertRaises(ValueError, prw, -2.1, -9)
+        self.assertRaises(ValueError, prw, 89, 1.2)
+        self.assertRaises(ValueError, prw, -21, -2.7)
+
+    def test_power_of_positive_int_num(self):
+        self.assertEqual(prw(1, 1), 1)
+        self.assertEqual(prw(5, 2), 25)
+        self.assertEqual(prw(12, 3), 1728)
+        self.assertEqual(prw(3, 4), 81)
+        self.assertEqual(prw(17, 8), 6975757441)
+
+    def test_power_of_negative_int_num(self):
+        self.assertEqual(prw(-2, 2), 4)
+        self.assertEqual(prw(-3, 3), -27)
+        self.assertEqual(prw(-10, 4), 10000)
+        self.assertEqual(prw(-90, 2), 8100)
+        self.assertEqual(prw(-89, 5), 5584059449)
+
+    def test_power_of_positive_float_num(self):
+        self.assertAlmostEqual(prw(1.0, 1), 1.0, 7)
+        self.assertAlmostEqual(prw(5.0, 2), 25.0, 7)
+        self.assertAlmostEqual(prw(2.5, 2), 6.25, 7)
+        self.assertAlmostEqual(prw(6.5, 3), 274.625, 7)
+        self.assertAlmostEqual(prw(15.0, 6), 11390625, 7)
+
+    def test_power_of_negative_float_num(self):
+        self.assertAlmostEqual(prw(-1.0, 2), 1.0, 7)
+        self.assertAlmostEqual(prw(-3.2, 3), -32,768, 7)
+        self.assertAlmostEqual(prw(-0.5, 4), 0.0625, 7)
+        self.assertAlmostEqual(prw(-2.0, 8), 256.0, 7)
+        self.assertAlmostEqual(prw(-4.5, 5), -1845.28125, 7)
