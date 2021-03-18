@@ -185,14 +185,13 @@ class TestDiv(unittest.TestCase):
     def test_div_one_intiger_one_float_positive_num(self):
         self.assertEqual(div(9.8, 1), 9.8)
         self.assertEqual(div(14.2, 2), 7.1)
-        self.assertEqual(div(33.3, 3.0), 11.1)
-        self.assertEqual(div(123.3, 10), 12.33)
-        self.assertEqual(div(444.4, 222.2), 2.0)
+        self.assertAlmostEqual(div(33.3, 3.0), 11.1)
+        self.assertAlmostEqual(div(123.3, 10), 12.33)
+        self.assertAlmostEqual(div(444.4, 222.2), 2.0)
     
     def test_div_one_intiger_one_float_negative_num(self):
         self.assertEqual(div(-9.1, 1), -9.1)
         self.assertEqual(div(20.5, -5), -4.1)
-        self.assertEqual(div(-124.4, 4.0), -31.1)
-        self.assertEqual(div(5297.6, -43), -123.2)
-        self.assertEqual(div(-100.1, -100), 1.001)
-        
+        self.assertAlmostEqual(div(-124.4, 4.0), -31.1)
+        self.assertAlmostEqual(div(5297.6, -43), -123.2)
+        self.assertAlmostEqual(div(-100.1, -100), 1.001)
