@@ -63,7 +63,7 @@ def div(x, y):
 # @param n
 #
 # @exception Input number is not an integer
-# @exception Input number is lesser than zero
+# @exception Input number is lesser than 0
 #
 # @return Factorial of a positive integer n
 def fact(n):
@@ -84,8 +84,10 @@ def prw(x, n):
 ##
 # @brief Nth root of a number
 #
-# @param x
+# @param x The base of root
 # @param n Root exponent
+#
+# @exception Input number x is lesser than 0
 #
 # @return Nth root of a positive integer x
 def root(x, n):
@@ -93,5 +95,15 @@ def root(x, n):
 
 
 ##
-# @brief Extra function TBD
+# @brief Combination of n things taken k at a time without repetition
 #
+# @param n How many things we work with
+# @param k How many things we take to one group
+#
+# @exception Math error if k is greater than n
+# @exception Math error if k or n is lesser than 0
+#
+# @return Amount of possible combinations without repetition
+#
+def comb(n, k):
+    pass
