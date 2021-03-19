@@ -291,3 +291,23 @@ class TestNRoot(unittest.TestCase):
         self.assertAlmostEqual(root(16, -2.0), 0.25)
         self.assertAlmostEqual(root(-145, 3.3), 4.518143295)
         self.assertAlmostEqual(root(169874, -8.9), 0.2584314062)
+
+
+#Test class for combination of n things taken k at a time without repetition
+class TestComb(unittest.TestCase):
+
+    def test_comb_errors(self):
+        self.assertRaises(ValueError, comb, 5, -1)
+        self.assertRaises(ValueError, comb, -5, 1)
+        self.assertRaises(ValueError, comb, -5, -3)
+        self.assertRaises(ValueError, comb, 2, 4)
+        self.assertRaises(ValueError, comb, 5.2, 3)
+        self.assertRaises(ValueError, comb, 6, 2.2)
+
+    def test_comb_int_num(self):
+        self.assertEqual(comb(5, 3), 10)
+        self.assertEqual(comb(0, 0), 1)
+        self.assertEqual(comb(1, 0), 1)
+        self.assertEqual(comb(2, 2), 1)
+        self.assertEqual(comb(10, 5), 252)
+        self.assertEqual(comb(12, 2), 66)
