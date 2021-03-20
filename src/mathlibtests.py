@@ -145,6 +145,7 @@ class TestMul(unittest.TestCase):
         self.assertEqual(mul(-100.1, -100), 10010.0)
 
 
+#Test class for divison function
 class TestDiv(unittest.TestCase):
 
     def test_div_with_zero(self):
@@ -237,7 +238,7 @@ class TestPower(unittest.TestCase):
         self.assertEqual(prw(-3, 3), -27)
         self.assertEqual(prw(-10, 4), 10000)
         self.assertEqual(prw(-90, 2), 8100)
-        self.assertEqual(prw(-89, 5), 5584059449)
+        self.assertEqual(prw(-89, 5), -5584059449)
 
     def test_power_of_positive_float_num(self):
         self.assertAlmostEqual(prw(1.0, 1), 1.0, 7)
