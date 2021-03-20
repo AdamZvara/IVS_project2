@@ -14,7 +14,7 @@
 #
 # @return Sum of two numbers x, y
 def add(x, y):
-    return x + y
+    return round(x + y, 9)
 
 
 ##
@@ -25,7 +25,7 @@ def add(x, y):
 #
 # @return Difference of two numbers x, y
 def sub(x, y):
-    return x - y
+    return round(x - y, 9)
 
 
 ##
@@ -36,7 +36,7 @@ def sub(x, y):
 #
 # @return Multiplication of two numbers x, y
 def mul(x, y):
-    return x * y
+    return round(x * y, 9)
 
 
 ##
@@ -47,14 +47,12 @@ def mul(x, y):
 #
 # @exception Division by Zero
 #
-# @return Division of two numbers x, y with 10 decimal digits accuracy
-#
-# @todo change division by zero to exception
+# @return Division of two numbers x, y with 9 decimal digits accuracy
 def div(x, y):
     if y == 0:
-        return 0
+        raise ValueError('Math Error')
     else:
-        return round(x / y, 10)
+        return round(x / y, 9)
 
 
 ##
@@ -67,7 +65,15 @@ def div(x, y):
 #
 # @return Factorial of a positive integer n
 def fact(n):
-    pass
+    if isinstance(n, int) and n > 0:
+        factorial = 1
+        while n > 1:
+            factorial *= n
+            n -= 1
+
+        return factorial
+    else:
+        raise ValueError('Math Error')
 
 
 ##
@@ -78,7 +84,7 @@ def fact(n):
 #
 # @return x to the power of n
 def prw(x, n):
-    pass
+    return round(x ** n, 9)
 
 
 ##
@@ -91,7 +97,10 @@ def prw(x, n):
 #
 # @return Nth root of a positive integer x
 def root(x, n):
-    pass
+    if x < 0:
+        raise ValueError('Math Error')
+    else:
+        return round(x ** (1/n), 9)
 
 
 ##
@@ -106,4 +115,7 @@ def root(x, n):
 # @return Amount of possible combinations without repetition
 #
 def comb(n, k):
-    pass
+    if (isinstance(n, int) and n >= 0) and (isinstance(k, int) and k >= 0) and (n >= k):
+        return fact(n)/(fact(n-k) * fact(k))
+    else:
+        raise ValueError('Math Error')
