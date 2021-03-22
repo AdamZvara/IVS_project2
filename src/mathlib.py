@@ -65,7 +65,7 @@ def div(x, y):
 #
 # @return Factorial of a positive integer n
 def fact(n):
-    if isinstance(n, int) and n > 0:
+    if isinstance(n, int) and n >= 0:
         factorial = 1
         while n > 1:
             factorial *= n
@@ -84,7 +84,7 @@ def fact(n):
 #
 # @return x to the power of n
 def prw(x, n):
-    return round(x ** n, 9)
+    return round(x ** n, 7)
 
 
 ##
@@ -95,12 +95,14 @@ def prw(x, n):
 #
 # @exception Input number x is lesser than 0
 #
-# @return Nth root of a positive integer x
+# @return Nth root of an integer x
 def root(x, n):
-    if x < 0:
+    if n == 0 or (n % 2 == 0 and x < 0) or (x == 0 and n <= 0):
         raise ValueError('Math Error')
-    else:
+    elif x > 0:
         return round(x ** (1/n), 9)
+    else:
+        return round(-(-x)**(1/n), 9)
 
 
 ##
