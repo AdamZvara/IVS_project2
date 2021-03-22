@@ -174,11 +174,11 @@ class TestDiv(unittest.TestCase):
         self.assertEqual(div(2.4, 2.0), 1.2)
         self.assertEqual(div(15.2, 10.0), 1.52)
         self.assertEqual(div(125.5, 5.0), 25.1)
-        self.assertEqual(div(555.5, 222.2), 123432.1)
+        self.assertEqual(div(555.5, 222.2), 2.5)
         
     def test_div_two_negative_float_num(self):
         self.assertEqual(div(-4.0, 2.0), -2.0)
-        self.assertEqual(div(-6.1, -2.1), 3.0)
+        self.assertEqual(div(-6.3, -2.1), 3.0)
         self.assertEqual(div(-789.4, -789.4), 1.0)
         self.assertEqual(div(-394.4, 4.0), -394.4)
         self.assertEqual(div(10000.2, -1.2), -8333.5)
@@ -220,7 +220,6 @@ class TestFact(unittest.TestCase):
 class TestPower(unittest.TestCase):
 
     def test_power_errors(self):
-        self.assertRaises(ValueError, prw, 2, 0)
         self.assertRaises(ValueError, prw, 2.1, 2.2)
         self.assertRaises(ValueError, prw, -2.1, -9)
         self.assertRaises(ValueError, prw, 89, 1.2)
@@ -228,6 +227,7 @@ class TestPower(unittest.TestCase):
 
     def test_power_of_positive_int_num(self):
         self.assertEqual(prw(1, 1), 1)
+        self.assertEqual(prw(2, 0), 1)
         self.assertEqual(prw(5, 2), 25)
         self.assertEqual(prw(12, 3), 1728)
         self.assertEqual(prw(3, 4), 81)
@@ -249,7 +249,7 @@ class TestPower(unittest.TestCase):
 
     def test_power_of_negative_float_num(self):
         self.assertAlmostEqual(prw(-1.0, 2), 1.0, 7)
-        self.assertAlmostEqual(prw(-3.2, 3), -32,768, 7)
+        self.assertAlmostEqual(prw(-3.2, 3), -32.768, 7)
         self.assertAlmostEqual(prw(-0.5, 4), 0.0625, 7)
         self.assertAlmostEqual(prw(-2.0, 8), 256.0, 7)
         self.assertAlmostEqual(prw(-4.5, 5), -1845.28125, 7)
@@ -290,7 +290,7 @@ class TestNRoot(unittest.TestCase):
     def test_root_of_negative_float_num(self):
         self.assertAlmostEqual(root(-4.4, 3.0), -1.638642541)
         self.assertAlmostEqual(root(16, -2.0), 0.25)
-        self.assertAlmostEqual(root(-145, 3.3), 4.518143295)
+        self.assertAlmostEqual(root(-145, 3.3), -4.518143295)
         self.assertAlmostEqual(root(169874, -8.9), 0.2584314062)
 
 
