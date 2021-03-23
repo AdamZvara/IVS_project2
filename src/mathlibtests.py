@@ -180,7 +180,7 @@ class TestDiv(unittest.TestCase):
         self.assertEqual(div(-4.0, 2.0), -2.0)
         self.assertEqual(div(-6.3, -2.1), 3.0)
         self.assertEqual(div(-789.4, -789.4), 1.0)
-        self.assertEqual(div(-394.4, 4.0), -394.4)
+        self.assertEqual(div(-394.4, 4.0), -98.6)
         self.assertEqual(div(10000.2, -1.2), -8333.5)
 
     def test_div_one_intiger_one_float_positive_num(self):

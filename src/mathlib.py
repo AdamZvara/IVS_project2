@@ -84,7 +84,10 @@ def fact(n):
 #
 # @return x to the power of n
 def prw(x, n):
-    return round(x ** n, 7)
+    if isinstance(n, int) and n >= 0:
+        return round(x ** n, 7)
+    else:
+        raise ValueError('Exponent is not a positive integer')
 
 
 ##
