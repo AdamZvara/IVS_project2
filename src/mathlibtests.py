@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+##
+# @file mathlibtests.py
+# @brief Test suite for TDD of mathematical library
+# @author Vaclav Korvas - xkorva03
 
 #need to have test and matlib in the same file
 #to test your program just type: python3 -m unittest matlib

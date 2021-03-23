@@ -4,7 +4,7 @@
 ##
 # @file mathlib.py
 # @brief Mathematic library with basic operations
-#
+# @author Tomas Matus - xmatus37
 
 ##
 # @brief Sum of two numbers
