@@ -109,10 +109,10 @@ def root(x, n):
 
 
 ##
-# @brief Combination of n things taken k at a time without repetition
+# @brief Combination of n elements taken k at a time without repetition
 #
-# @param n How many things we work with
-# @param k How many things we take to one group
+# @param n How many elements are available
+# @param k How many elements are in a group
 #
 # @exception Math error if k is greater than n
 # @exception Math error if k or n is lesser than 0
