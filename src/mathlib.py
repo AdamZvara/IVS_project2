@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ##
-# @file mathlip.py
+# @file mathlib.py
 # @brief Mathematic library with basic operations
 #
 
