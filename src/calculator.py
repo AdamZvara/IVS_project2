@@ -6,6 +6,20 @@ import sys
 first_number = ""
 second_number = ""
 
+def clear():
+    global first_number
+    global second_number
+    first_number = ""
+    second_number = ""
+    ui.lcdNumber.display("")
+    ui.lcdNumber_2.display("")
+    ui.label.setText("")
+
+def error():
+    global second_number
+    clear()
+    second_number = "error"
+
 def evaluate():
     global first_number
     global second_number
@@ -15,7 +29,10 @@ def evaluate():
     elif operation == "-":
         second_number = str(sub(float(first_number), float(second_number)))
     elif operation == "!":
-        second_number = str(fact(float(second_number)))
+        if float(first_number).is_integer():
+            second_number = str(fact(int(float(first_number))))
+        else:
+            error()
     elif operation == "/":
         second_number = str(div(float(first_number), float(second_number)))
     elif operation == "x":
@@ -23,15 +40,23 @@ def evaluate():
     elif operation == "^":
         if float(second_number).is_integer():
             second_number = str(prw(float(first_number), int(float(second_number))))
-            # ERROR
+        else:
+            error()
     elif operation == "√":
-        second_number = str(root(float(second_number), float(first_number)))
+        if float(first_number).is_integer():
+            second_number = str(root(float(second_number), int(float(first_number))))
+        else:
+            error()
     elif operation == "nPr":
-        second_number = str(comb(float(second_number), float(first_number)))
+        if float(first_number).is_integer() and float(second_number).is_integer():
+            second_number = str(comb(int(float(first_number)), int(float(second_number))))
+        else:
+            error()
+
     ui.lcdNumber.display(second_number)
     first_number = ""
     ui.lcdNumber_2.display("")
-    ui.label.setText("")
+    ui.label.setText("=")
 
 def operation_clicked(value):
     global first_number
@@ -48,6 +73,9 @@ def operation_clicked(value):
 
 def number_clicked(value):
     global second_number
+    if ui.label.text() == '=':
+        second_number = ""
+        ui.label.setText("")
     second_number += value
     ui.lcdNumber.display(second_number)
     
@@ -77,6 +105,7 @@ ui.pushButton_combinations.clicked.connect(lambda: operation_clicked(ui.pushButt
 ui.pushButton_factorial.clicked.connect(lambda: operation_clicked(ui.pushButton_factorial.text()))
 ui.pushButton_divide.clicked.connect(lambda: operation_clicked(ui.pushButton_divide.text()))
 ui.pushButton_equals.clicked.connect(lambda: evaluate())
+ui.pushButton_clear.clicked.connect(lambda: clear())
 #
 Dialog.show()
 sys.exit(app.exec_())
