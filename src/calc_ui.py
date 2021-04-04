@@ -161,7 +161,7 @@ class Ui_Dialog(object):
         self.lcdNumber.setSegmentStyle(QtWidgets.QLCDNumber.Flat)
         self.lcdNumber.setObjectName("lcdNumber")
         self.lcdNumber_2 = QtWidgets.QLCDNumber(Dialog)
-        self.lcdNumber_2.setGeometry(QtCore.QRect(1, 0, 298, 30))
+        self.lcdNumber_2.setGeometry(QtCore.QRect(1, 0, 271, 30))
         self.lcdNumber_2.setDigitCount(20)
         self.lcdNumber_2.setObjectName("lcdNumber_2")
         self.pushButton_zero = QtWidgets.QPushButton(Dialog)
@@ -329,6 +329,14 @@ class Ui_Dialog(object):
         self.pushButton_power.setToolTip("Power\nUsage: x^y")
         self.pushButton_power.setToolTipDuration(4000)
         self.pushButton_power.setObjectName("pushButton_power")
+        self.label = QtWidgets.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(280, 0, 21, 31))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -378,6 +386,7 @@ class Ui_Dialog(object):
         self.pushButton_power.setText(_translate("Dialog", "^"))
         self.pushButton_power.setShortcut(_translate("Dialog", "^"))
         self.pushButton_root.setShortcut(_translate("Dialog", "r"))
+        self.label.setText(_translate("Dialog", ""))
 
 
 if __name__ == "__main__":
