@@ -21,7 +21,9 @@ def evaluate():
     elif operation == "x":
         second_number = str(mul(float(first_number), float(second_number)))
     elif operation == "^":
-        second_number = str(prw(float(first_number), int(float(second_number))))
+        if float(second_number).is_integer():
+            second_number = str(prw(float(first_number), int(float(second_number))))
+            # ERROR
     elif operation == "√":
         second_number = str(root(float(second_number), float(first_number)))
     elif operation == "nPr":
