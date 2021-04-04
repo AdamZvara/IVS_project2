@@ -11,24 +11,25 @@ def evaluate():
     global second_number
     operation = ui.label.text()
     if operation == "+":
-        first_number = str(add(float(first_number), float(second_number)))
+        second_number = str(add(float(first_number), float(second_number)))
     elif operation == "-":
-        first_number = str(sub(float(first_number), float(second_number)))
+        second_number = str(sub(float(first_number), float(second_number)))
     elif operation == "!":
-        first_number = str(fact(float(second_number)))
+        second_number = str(fact(float(second_number)))
     elif operation == "/":
-        first_number = str(div(float(first_number), float(second_number)))
+        second_number = str(div(float(first_number), float(second_number)))
     elif operation == "x":
-        first_number = str(mul(float(first_number), float(second_number)))
+        second_number = str(mul(float(first_number), float(second_number)))
     elif operation == "^":
-        first_number = str(prw(float(first_number), float(second_number)))
+        second_number = str(prw(float(first_number), int(float(second_number))))
     elif operation == "√":
-        first_number = str(root(float(second_number), float(first_number)))
-    elif operation == "n":
-        first_number = str(root(float(second_number), float(first_number)))
-    ui.lcdNumber_2.display(first_number)
-    second_number = ""
-    ui.lcdNumber.display("")
+        second_number = str(root(float(second_number), float(first_number)))
+    elif operation == "nPr":
+        second_number = str(comb(float(second_number), float(first_number)))
+    ui.lcdNumber.display(second_number)
+    first_number = ""
+    ui.lcdNumber_2.display("")
+    ui.label.setText("")
 
 def operation_clicked(value):
     global first_number
@@ -73,6 +74,7 @@ ui.pushButton_root.clicked.connect(lambda: operation_clicked(ui.pushButton_root.
 ui.pushButton_combinations.clicked.connect(lambda: operation_clicked(ui.pushButton_combinations.text()))
 ui.pushButton_factorial.clicked.connect(lambda: operation_clicked(ui.pushButton_factorial.text()))
 ui.pushButton_divide.clicked.connect(lambda: operation_clicked(ui.pushButton_divide.text()))
+ui.pushButton_equals.clicked.connect(lambda: evaluate())
 #
 Dialog.show()
 sys.exit(app.exec_())
