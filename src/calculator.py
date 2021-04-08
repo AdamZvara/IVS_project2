@@ -24,35 +24,38 @@ def evaluate():
     global first_number
     global second_number
     operation = ui.label.text()
-    if operation == "+":
-        second_number = str(add(float(first_number), float(second_number)))
-    elif operation == "-":
-        second_number = str(sub(float(first_number), float(second_number)))
-    elif operation == "!":
-        if float(first_number).is_integer():
-            second_number = str(fact(int(float(first_number))))
-        else:
-            error()
-    elif operation == "/":
-        second_number = str(div(float(first_number), float(second_number)))
-    elif operation == "x":
-        second_number = str(mul(float(first_number), float(second_number)))
-    elif operation == "^":
-        if float(second_number).is_integer():
-            second_number = str(prw(float(first_number), int(float(second_number))))
-        else:
-            error()
-    elif operation == "√":
-        if float(first_number).is_integer():
-            second_number = str(root(float(second_number), int(float(first_number))))
-        else:
-            error()
-    elif operation == "nPr":
-        if float(first_number).is_integer() and float(second_number).is_integer():
-            second_number = str(comb(int(float(first_number)), int(float(second_number))))
-        else:
-            error()
+    try:
+        if operation == "+":
+            second_number = str(add(float(first_number), float(second_number)))
+        elif operation == "-":
+            second_number = str(sub(float(first_number), float(second_number)))
+        elif operation == "!":
+            if float(first_number).is_integer():
+                second_number = str(fact(int(float(first_number))))
+            else:
+                error()
+        elif operation == "/":
+            second_number = str(div(float(first_number), float(second_number)))
+        elif operation == "x":
+            second_number = str(mul(float(first_number), float(second_number)))
+        elif operation == "^":
+            if float(second_number).is_integer():
+                second_number = str(prw(float(first_number), int(float(second_number))))
+            else:
+                error()
+        elif operation == "√":
+            if float(first_number).is_integer():
+                second_number = str(root(float(second_number), int(float(first_number))))
+            else:
+                error()
+        elif operation == "nPr":
+            if float(first_number).is_integer() and float(second_number).is_integer():
+                second_number = str(comb(int(float(first_number)), int(float(second_number))))
+            else:
+                error()
 
+    except ValueError:
+        error()
     ui.lcdNumber.display(second_number)
     first_number = ""
     ui.lcdNumber_2.display("")
