@@ -66,6 +66,10 @@ def operation_clicked(value):
     global second_number
     if (ui.lcdNumber.value() != 0) and (ui.lcdNumber_2.value() != 0):
         evaluate()
+        ui.lcdNumber_2.display(ui.lcdNumber.value())
+        ui.lcdNumber.display("")
+        first_number = second_number
+        second_number = ""
     else:
         first_number = second_number
         second_number = ""
