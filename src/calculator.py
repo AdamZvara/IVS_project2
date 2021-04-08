@@ -1,3 +1,8 @@
+##
+# @file calculator.py
+# @brief Integration of mathlib and gui
+# @author Vojtech Eichler (xeichl01)
+
 from PyQt5 import QtWidgets, QtCore
 from calc_ui import Ui_Dialog
 from mathlib import *
@@ -6,6 +11,9 @@ import sys
 first_number = ""
 second_number = ""
 
+##
+# @brief Function to clear displayed values and stored numbers
+#
 def clear():
     global first_number
     global second_number
@@ -15,11 +23,17 @@ def clear():
     ui.lcdNumber_2.display("")
     ui.label.setText("")
 
+##
+# @brief Displays an error message
+#
 def error():
     global second_number
     clear()
     second_number = "error"
 
+##
+# @brief Calls function from mathlib according to operation chosen by user.
+#
 def evaluate():
     global first_number
     global second_number
@@ -61,9 +75,17 @@ def evaluate():
     ui.lcdNumber_2.display("")
     ui.label.setText("=")
 
+##
+# @brief Set operation depending on which button was clicked
+#
+# @param value Text of clicked button
+#
 def operation_clicked(value):
     global first_number
     global second_number
+    ##
+    # If two numbers are already given, evaluate, then insert operation
+    #
     if (ui.lcdNumber.value() != 0) and (ui.lcdNumber_2.value() != 0):
         evaluate()
         ui.lcdNumber_2.display(ui.lcdNumber.value())
@@ -77,7 +99,11 @@ def operation_clicked(value):
         ui.lcdNumber.display(second_number)
         
     ui.label.setText(value)
-
+##
+# @brief Appends number to input display
+#
+# @param value Text of clicked button
+#
 def number_clicked(value):
     global second_number
     if ui.label.text() == '=':
@@ -85,12 +111,17 @@ def number_clicked(value):
         ui.label.setText("")
     second_number += value
     ui.lcdNumber.display(second_number)
-    
+
+##
+# Window initialization
+#
 app = QtWidgets.QApplication(sys.argv)
 Dialog = QtWidgets.QDialog()
 ui = Ui_Dialog()
 ui.setupUi(Dialog)
 
+##
+# Button initialization
 #
 ui.pushButton_one.clicked.connect(lambda: number_clicked("1"))
 ui.pushButton_two.clicked.connect(lambda: number_clicked("2"))
@@ -113,6 +144,6 @@ ui.pushButton_factorial.clicked.connect(lambda: operation_clicked(ui.pushButton_
 ui.pushButton_divide.clicked.connect(lambda: operation_clicked(ui.pushButton_divide.text()))
 ui.pushButton_equals.clicked.connect(lambda: evaluate())
 ui.pushButton_clear.clicked.connect(lambda: clear())
-#
+
 Dialog.show()
 sys.exit(app.exec_())
