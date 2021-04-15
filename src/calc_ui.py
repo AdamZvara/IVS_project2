@@ -357,7 +357,6 @@ class Ui_Dialog(object):
         self.pushButton_divide.setFocusPolicy(QtCore.Qt.NoFocus)
         self.pushButton_times.setFocusPolicy(QtCore.Qt.NoFocus)
         self.pushButton_clear.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.pushButton_equals.setFocusPolicy(QtCore.Qt.NoFocus)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
