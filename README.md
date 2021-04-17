@@ -2,14 +2,20 @@
 
 A calculator with basic operations and GUI. 
 
+
+![NotLikeThis Calculator](calc.png) 
+
 ## Authors
 
 NotLikeThis
 
-**Vojtěch Eichler** - xeichl01 \
-**Václav Korvas** - xkorva03 \
-**Tomáš Matuš** - xmatus37 \
-**Adam Zvara** - xzvara01 
+**Vojtěch Eichler** - xeichl01
+
+**Václav Korvas** - xkorva03
+
+**Tomáš Matuš** - xmatus37 
+
+**Adam Zvara** - xzvara01
 
 
 ## License
