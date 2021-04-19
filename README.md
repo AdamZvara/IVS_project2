@@ -3,7 +3,12 @@
 A calculator with basic operations and GUI. 
 
 
-![NotLikeThis Calculator](calc.png) 
+![NotLikeThis Calculator](screenshot.png) 
+
+## Enviroment
+---------
+
+Ubuntu 64bit
 
 ## Authors
 
