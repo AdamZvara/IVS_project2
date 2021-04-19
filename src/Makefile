@@ -4,8 +4,8 @@ SRCTEST = mathlibtests.py
 all: run
 
 #run calculator
-run: calc_ui.py
-	python3 calc_ui.py
+run: calculator.py
+	python3 calculator.py
 
 #run mathlib tests
 test: $(SRCTEST)
