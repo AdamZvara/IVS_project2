@@ -1,0 +1,4 @@
+#!/bin/bash
+
+KUFR_HOME=`dirname "$0"`
+exec python3 "$KUFR_HOME/calculator.py"

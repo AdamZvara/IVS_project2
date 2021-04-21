@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Qt;
+Exec=notlikecalc
+GenericName=NotLikeCalc
+Icon=notlikeicon
+StartupWMClass=calculator.py
+Name=NotLikeCalc
+Type=Application
+X-KDE-StartupNotify=false
