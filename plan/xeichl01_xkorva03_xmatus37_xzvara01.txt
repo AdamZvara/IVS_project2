@@ -1,0 +1,101 @@
+NotLikeThis - xeichl01, xkorva03, xmatus37, xzvara01
+IVS - 2. Projekt - Týmový projekt - Vytvorenie kalkulačky
+
+-------------------------------------------------------------
+
+Termíny:
+	18.03.2021 - plánu projektu, repozitár, trello
+	22.03.2021 - testy pre matematickú knihovnu
+	25.03.2021 - matematická knihovna, makefile
+	02.04.2021 - základné GUI, profiling
+	09.04.2021 - integrácia
+	16.04.2021 - dokumentácia, nápoveda
+	21.04.2021 - inštalátor, mockup, hodnotenie, detaily 
+	29.04.2021 - odovzdanie projektu
+	----------------------------------------------------
+	21.05.2021 - inštalácia, problémy
+	24.05.2021 - obhajoba
+	
+------------------------------------------------------------
+
+
+Úlohy:
+	Správa repozitára (github) : xzvara01
+		- vytvorenie kostry repozitára pre sdieľanú prácu
+	
+	Kontrola splnenia úloh : xzvara01
+		- správa Trello účtu, kontrola činností členov týmu
+		
+	Testy matematickej knihovny : xkorva03
+		- vytvorenie testov pre matematickú knihovnu 
+		- základ pre test-driven-development
+		
+	Matematická knihovna : xmatus37
+		- realizácia základných operácií kalkulačky
+		
+	Priebežná kontrola funčnosti: xzvara01 
+		- kontrolovanie funkčnosti jednotlivých častí kalkulačky
+		- zabezpečenie integrácie projektu po menších častiach
+		
+	Makefile : xkorva03
+		- vytvorenie súboru Makefile na spustenie kalkulačky, testov ...
+	
+	GUI : xeichl01
+		- vytvorenie grafického rozhrania kalkulačky
+		
+	Profiling : xzvara01
+		- výpočet smerodajnej odchýlky s operáciami
+		  z matematickej knihovny
+		- zisťovanie prípadných optimalizácií programu
+	
+	Programová dokumentácia: xkorva03
+		- kontrola správnosti dokumentácie vytvorenej nástrojom
+		  doxygenom a jej úprava
+	
+	Uživateľská dokumentácia: xeichl01
+		- vytvorenie dokumentácie pre uživateľa s návodom na 
+		  inštaláciu a odinštalovanie kalkulačky 
+		
+	Nápoveda: xeichl01
+		- vytvorenie nápovedy/návodu na použitie pre uživateľa 
+		
+	Inštalátor/odinštalátor: xmatus37 
+		- vytvorenie inštalátora/odinštalátora kalkulačky
+
+	Dodržiavanie termínov: xeichl01
+		- kontrola práce jednotlivých členov týmu
+		- informovanie o blížiacih sa termínoch
+	
+	Mockup : všetci členovia týmu
+		- vytvorenie návrhu novej verzie kalkulačky s podporou vedeckého módu, 
+		  vykresľovania grafov ...	 
+		  
+------------------------------------------------------------	
+
+Týmový vedúci: xeichl01
+	Zabezpečuje komunikácie s vyučujúcimi, odovzdávanie projektu a celkovo 
+	dohliada na vývoj projektu. Podľa stavu vývoja projektu môže upravovať 
+	pridelenie úloh ostatným členom týmu ...
+
+Komunikačné kanály:
+	Díscord: 
+		Komunikácia vo forme chatu/diskusie prebieha na privátnom serveri. 
+		Snaha o štrukturovanú komunikáciu je zabezpečená rozdelením serveru 
+		na podčasti: termíny, plánovanie, zdroje, diskusia, problémy.
+		Taktiež budú prebiehať pravidelné stretnutia každý týždeň (v prípade 
+		potreby aj častejšie), na ktorých sa bude rozoberať stav projektu, 
+		dokončené zmeny a problémy, ktoré vznikli. 
+			 
+	Github (projects): 
+		Jednouchý manažér úloh, slúži na zobrazenie nesplnených, rozpracovaných a dokončených 
+		úloh. 
+			
+	Pravidlá pre komunikáciu:
+		Pravidelná kontrola vyššie spomínaných komunikačných kanálov. Po zhliadnutí 
+		dôležitých správ je potrebné správu označiť napr. emotikonom ako oznámenie
+		zhliadnutia správy.
+			
+
+Systém pre správu verzií: GitHub		
+	Repozitár bude sdieľaný s vyučujúcimi pomocou emailu: ivs.kontrola@gmail.com
+	Odkaz na repozitář: https://github.com/AdamZvara/ivs-project2
