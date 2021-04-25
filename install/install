@@ -1,0 +1,6 @@
+install/notlikeicon.png /usr/share/pixmaps
+install/notlikecalc.desktop /usr/share/applications
+install/notlikecalc /usr/bin
+src/calculator.py /usr/bin
+src/calc_ui.py /usr/bin
+src/mathlib.py /usr/bin

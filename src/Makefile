@@ -22,5 +22,8 @@ doc: Doxyfile
 profile: profiling.py
 	python3 profiling.py
 
+installer: calculator.py  calc_ui.py mathlib.py
+	bash install.sh
+
 clean: 
 	rm -r -f __pycache__ ../doc warning_doxygen.txt
