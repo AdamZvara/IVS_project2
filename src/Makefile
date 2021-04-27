@@ -1,5 +1,6 @@
-.PHONY = all clean test doc run profile
+.PHONY = all clean test doc run profile pack
 SRCTEST = mathlibtests.py
+TEAM_PACK = xeichl01_xkorva03_xmatus37_xzvara01
 
 all: run
 
@@ -17,7 +18,16 @@ doc: Doxyfile
 	doxygen
 	mv doc ../
 	mv warning_doxygen.txt ../doc
+	mv ../doc ../../
 
+#pack project so it can be handed over
+pack: clean doc
+	rm -rf ../../$(TEAM_PACK).zip 
+	mkdir -p ../../$(TEAM_PACK)/doc && cp -ar ../../doc/. ../../$(TEAM_PACK)/doc
+	mkdir -p ../../$(TEAM_PACK)/repo && cp -r ../../ivs-project2/. ../../$(TEAM_PACK)/repo
+	mkdir ../../$(TEAM_PACK)/install && cp -r ../install/. ../../$(TEAM_PACK)/install
+	cd ../.. && zip -qr $(TEAM_PACK).zip $(TEAM_PACK)
+	cd ../.. && rm -rf $(TEAM_PACK)
 #run profiling program
 profile: profiling.py
 	python3 profiling.py
@@ -26,4 +36,4 @@ installer: calculator.py  calc_ui.py mathlib.py
 	bash install.sh
 
 clean: 
-	rm -r -f __pycache__ ../doc warning_doxygen.txt
+	rm -r -f __pycache__ ../../doc warning_doxygen.txt ../../$(TEAM_PACK)
