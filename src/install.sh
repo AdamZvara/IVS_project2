@@ -14,5 +14,5 @@ mv -f ./install/control ./debian
 dpkg-buildpackage -rfakeroot -uc -b
 cd ..
 rm -r notlikecalc-1.0 notlikecalc-1.0.tar.gz notlikecalc_1.0_amd64.buildinfo notlikecalc_1.0_amd64.changes
-mkdir install
+mkdir -p install
 mv *.deb ./install/notlikecalc-1.0.deb
