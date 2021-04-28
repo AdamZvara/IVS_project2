@@ -35,7 +35,6 @@ profile: profiling.py
 
 #make install folder with .deb package
 installer: calculator.py  calc_ui.py mathlib.py
-	rm -rf ../../install
 	bash install.sh
 
 clean: 
