@@ -1,0 +1,4 @@
+xeichl01 100 (GUI, integrace, uživatelské dokumentace, dodržování termínů, mockup)
+xzvara01 100 (Správa repozitáře, správa meetingů, průběžná kontrola funkčnosti, profiling)
+xkorva03 100 (Testy matematické knihovny, Makefile, programová dokumentace)
+xmatus37 100 (Matematická knihovna, instalátor/odinstalátor, uživatelská dokumentace)
