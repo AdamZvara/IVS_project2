@@ -1,0 +1,10 @@
+NotLikeThis - xeichl01, xkorva03, xmatus37, xzvara01
+
+Rozdiely medzi skutočnosťou a plánom:
+
+PLÁN: pôvodne sme počítali s využívaním Trella na kontrolovanie splnenia úloh
+SKUTOČNOSŤ: presunul sme to na GitHub do časti "Projekt", ktorú sme nakoniec ani veľmi nevyužili
+
+PLÁN: pôvodne bolo vytvorenie uživateľskej dokumentácie zverené jednému človeku
+SKUTOČNOSŤ: pracovali na tom dvaja ľudia - človek, ktorý pracoval na GUI a na inštalátore
+
